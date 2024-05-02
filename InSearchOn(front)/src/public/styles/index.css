@@ -66,8 +66,10 @@ header{
 
 @media screen and (max-height: 450px){
     header {
-        font-size: 2em; 
         min-height: 3em; 
+    }
+    body{
+        min-height: 200px;
     }
 }
 
@@ -82,12 +84,13 @@ input{
     font-size: 16px;
     border:#ddd solid 1px;
     float:left;
-    padding:10px 20px 10px 20px;
+    padding:10px 40px 10px 20px;
     border-radius: 30px;
     width: 30vw; /* Define a largura em 40% da largura da viewport */
     height: 35px; /* Calcula a altura proporcionalmente à largura */
     max-width: 40em; /* Define a largura máxima em 40em */
     max-height: 3em; /* Define a altura máxima em 3em */
+    min-width: 15em;
  }
 
  input:focus{
@@ -98,7 +101,7 @@ input{
  
  #lupa{
     float:left;
-    margin:1vh 0px 0px -30px;
+    margin:8px 0px 0px -30px;
     cursor:pointer;
     color: #061A40;
  }

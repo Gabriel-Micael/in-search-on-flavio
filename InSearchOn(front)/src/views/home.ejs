@@ -12,10 +12,10 @@
         <h1>InSearchOnFlávio</h1>
     </header>
     <div class="pesquisa">
-        <form action="submit">
+        <form action="localhost:8080/Search?query=${text}">
             <div class="submit-line">
-                <input type="text" placeholder="Digite sua pesquisa"/>
-                <div id="lupa" onclick="alert('ok :)');"></div>
+                <input name="text" type="text" placeholder="Digite sua pesquisa"/>
+                <div id="lupa" onclick="alert('ok')"></div>
             </div>
         </form>
     </div>

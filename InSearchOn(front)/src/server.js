@@ -1,4 +1,12 @@
-const express = require('express');
+// const express = require('express');
+import express from "express"
+import axios from 'axios'
+
+export const api = axios.create({
+    baseURL: "http://localhost:8080/v1"
+  });
+  
+
 const app = express();
 
 app.use(express.static('public'));

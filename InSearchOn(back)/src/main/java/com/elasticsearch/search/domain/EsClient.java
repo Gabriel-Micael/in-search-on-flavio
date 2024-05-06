@@ -63,7 +63,7 @@ public class EsClient {
         SearchResponse<ObjectNode> response;
         try {
             response = elasticsearchClient.search(s -> s
-                .index("wikipedia").from(0).size(10)
+                .index("wikipedia").from(0).size(50)
                 .query(matchQuery), ObjectNode.class
             );
         } catch (IOException e) {

@@ -114,3 +114,38 @@ input{
     font-family: Kannit;
  }
  
+ .abs{
+    margin-bottom: 10px;
+ }
+ 
+ .test{
+    margin: 0 25vw 0 25vw;
+    color: aliceblue;
+    font-family: Kannit;
+    float: left;
+    overflow: auto;
+ }
+
+ h2{
+    margin-bottom: 10px;
+ }
+ .url{
+    margin-bottom: 5px;
+ }
+ /* Para navegadores WebKit (Chrome, Safari) */
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 6px; /* largura da barra de rolagem */
+    height: 6px; /* altura da barra de rolagem */
+}
+
+/* Estilo do polegar da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background: #ccc; /* cor do polegar */
+    border-radius: 3px; /* borda do polegar */
+}
+
+/* Estilo do fundo da barra de rolagem (opcional) */
+::-webkit-scrollbar-track {
+    background: transparent; /* cor de fundo da barra de rolagem */
+}

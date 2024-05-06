@@ -1,18 +1,38 @@
-// Seleciona o campo de entrada
-let result = ""
-
 const inputPesquisa = document.getElementById("input-pesquisa");
-const p = document.getElementById("test");
 
-// Adiciona um ouvinte de evento para o evento keypress
-async function busca() {
+        // Função para realizar a busca
+        function busca() {
+            console.log("entrou");
 
-  console.log("entrou")
+            const valorInput = inputPesquisa.value;  
+            fetch("http://localhost:8080/v1/search?query=" + valorInput, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "text/plain"
+                },
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(jsonData) {
+                const formattedData = formatJSON(jsonData);
+                document.getElementById('test').innerHTML = formattedData;
+            })
+            .catch(function(error) {
+                console.error('Erro:', error);
+            });
+        }
 
-  const valorInput = inputPesquisa.value;  
-  const response = await fetch("https://localhost:8080/v1/search?query=" + valorInput);
-  const body = await response.json();
-  result = body;
-   p.innerText = result;        
-  
-}
+        // Função para formatar os dados JSON
+        function formatJSON(jsonData) {
+            return jsonData.map(item => {
+                return `
+                    <div>
+                        <h2>${item.title}</h2>
+                        <p class="url" style="font-size: 12px;">${item.url}</p>
+                        <br>
+                        <p class="abs" style="font-size: 16px;">${item.abs}</p>
+                    </div>
+                `;
+            }).join(''); // Precisa juntar todos os elementos do array em uma string
+        }

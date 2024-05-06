@@ -1,6 +1,7 @@
 package com.elasticsearch.search.controller;
 
 import com.elasticsearch.search.api.facade.SearchApi;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.elasticsearch.search.api.model.Result;
 import com.elasticsearch.search.service.SearchService;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 
-//@CrossOrigin(origins = "http://localhost:1234")
+@CrossOrigin(origins = "http://localhost:1234")
 @RestController
 public class SearchController implements SearchApi {
 

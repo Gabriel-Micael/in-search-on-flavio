@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' type='text/css'>
-    
     <title>Search in InSearchOn Page</title>
 </head>
 <body>
@@ -17,39 +16,16 @@
         <form id="form-pesquisa" action="localhost:8080/v1/search" method="GET">
             <div class="submit-line">
                 <input id="input-pesquisa" name="query" type="text" placeholder="Digite sua pesquisa"/>
-                <div id="lupa" onclick="busca()"></div>
+                <div id="lupa"></div>
             </div>
         </form>
     </div>
-    <div>
-        <p id="test"></p>
+    <div id="suggest">
+        <h3 id="suggest_data"></h3>
     </div>
-    <script>
-        let result = ""
-
-        const inputPesquisa = document.getElementById("input-pesquisa");
-const p = document.getElementById("test");
-
-// Adiciona um ouvinte de evento para o evento keypress
-function busca() {
-
-  console.log("entrou")
-
-  const valorInput = inputPesquisa.value;  
-  fetch("http://localhost:8080/v1/search?query=" + valorInput, {
-        method: "POST",
-        headers: {
-            "Content-Type": "text/plain"
-        },
-        body: JSON.stringify()
-    }).then(function(response) {
-        return response.json();
-    }).then(function(muutuja){
-        document.getElementById('test').innerHTML = JSON.stringify(muutuja);
-    });
-}
-
-
-    </script>
+    <div class="test">
+        <div id="test"></div>
+    </div>
+    
 </body>
 </html>

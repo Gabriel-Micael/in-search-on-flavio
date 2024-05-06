@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 
-@CrossOrigin
+//@CrossOrigin(origins = "http://localhost:1234")
 @RestController
 public class SearchController implements SearchApi {
 

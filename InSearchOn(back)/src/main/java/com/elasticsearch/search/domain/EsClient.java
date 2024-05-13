@@ -57,6 +57,8 @@ public class EsClient {
         elasticsearchClient = new co.elastic.clients.elasticsearch.ElasticsearchClient(transport);
     }
 
+
+
     public SearchResponse search(String query) {
         Query matchQuery = MatchQuery.of(q -> q.field("content").query(query))._toQuery();
 

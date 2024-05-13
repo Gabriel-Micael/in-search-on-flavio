@@ -31,7 +31,6 @@ body{
     flex-wrap: nowrap;
     align-content: stretch;
     justify-content: center;
-    
 }
 
 
@@ -75,7 +74,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 6vw;
+    padding-bottom: 2em;
 }
 
 input{
@@ -148,4 +147,24 @@ input{
 /* Estilo do fundo da barra de rolagem (opcional) */
 ::-webkit-scrollbar-track {
     background: transparent; /* cor de fundo da barra de rolagem */
+}
+
+footer {
+    background-color: #f1f1f1;
+    color:#04183b;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.suggest{
+    color:rgb(231, 165, 84);
+    font-style: italic;
+    padding-bottom: 1em;
+}
+
+.result{
+    
 }

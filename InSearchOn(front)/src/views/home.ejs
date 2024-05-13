@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
-    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' type='text/css'>
+    <link rel="stylesheet" href="../public/styles/index.css">
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'
+        type='text/css'>
     <title>Search in InSearchOn Page</title>
-</head>
-<body>
     
+</head>
+
+<body>
+
     <header>
         <h1>InSearchOnFlávio</h1>
     </header>
@@ -16,16 +20,20 @@
         <form id="form-pesquisa" action="localhost:8080/v1/search" method="GET">
             <div class="submit-line">
                 <input id="input-pesquisa" name="query" type="text" placeholder="Digite sua pesquisa"/>
-                <div id="lupa"></div>
+                <div id="lupa" onclick="busca()"></div>
             </div>
         </form>
     </div>
     <div id="suggest">
-        <h3 id="suggest_data"></h3>
+        <h3 class="suggest" id="suggest_data">aqui aparece sugestão de correção de pesquisa</h3>
     </div>
     <div class="test">
-        <div id="test"></div>
+        <div class="result" id="result"></div>
     </div>
-    
+    <footer>
+        <h4>terminar de fazer o footer</h4>
+    </footer>
+    <script src="../public/api.js"></script>
 </body>
+
 </html>

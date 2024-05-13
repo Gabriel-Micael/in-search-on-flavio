@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 
-@CrossOrigin(origins = "http://localhost:1234")
+@CrossOrigin
 @RestController
 public class SearchController implements SearchApi {
 
@@ -23,7 +23,11 @@ public class SearchController implements SearchApi {
 
     @Override
     public CompletableFuture<ResponseEntity<List<Result>>> search(String query) {
-        var result = searchService.submitQuery(query);
-        return CompletableFuture.supplyAsync(() -> ResponseEntity.ok(result));
+
+            // Consulta normal
+            List<Result> result = searchService.submitQuery(query);
+            return CompletableFuture.supplyAsync(() -> ResponseEntity.ok(result));
+        
     }
+
 }

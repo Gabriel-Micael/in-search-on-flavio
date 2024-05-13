@@ -2,28 +2,28 @@
     font-family: "Saint Carell Clean PERSONAL";
     src: url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.eot");
     src: url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.svg#Saint Carell Clean PERSONAL")format("svg");
+        url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/888471906385db034905a576bb127ebd.svg#Saint Carell Clean PERSONAL")format("svg");
 }
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-h1{
+h1 {
     font-family: "Saint Carell Clean PERSONAL";
     color: rgb(240, 240, 240);
     text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-body{
-    background: rgb(6,26,64);
-    background: linear-gradient(300deg, rgba(6,26,64,1) 36%, rgba(0,53,89,1) 73%);
+body {
+    background: rgb(6, 26, 64);
+    background: linear-gradient(300deg, rgba(6, 26, 64, 1) 36%, rgba(0, 53, 89, 1) 73%);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ body{
 }
 
 
-header{
+header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,114 +44,130 @@ header{
     height: 15vh;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
     header {
-        font-size: 1em; 
-        min-height: 3em; 
+        font-size: 1em;
+        min-height: 3em;
     }
 
-    #lupa{
-        margin:0.5vh 0px 0px -30px;
+    #lupa {
+        margin: 0.5vh 0px 0px -30px;
     }
 
-    input{
-        width: 200px; 
-        height: 84px; 
-     }
-    
+    input {
+        width: 200px;
+        height: 84px;
+    }
+
 }
 
-@media screen and (max-height: 450px){
+@media screen and (max-height: 450px) {
     header {
-        min-height: 3em; 
+        min-height: 3em;
     }
-    body{
+
+    body {
         min-height: 200px;
     }
 }
 
-.pesquisa{
+.pesquisa {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 2em;
 }
 
-input{
+input {
     font-size: 16px;
-    border:#ddd solid 1px;
-    float:left;
-    padding:10px 40px 10px 20px;
+    border: #ddd solid 1px;
+    float: left;
+    padding: 10px 40px 10px 20px;
     border-radius: 30px;
-    width: 30vw; /* Define a largura em 40% da largura da viewport */
-    height: 35px; /* Calcula a altura proporcionalmente à largura */
-    max-width: 40em; /* Define a largura máxima em 40em */
-    max-height: 3em; /* Define a altura máxima em 3em */
+    width: 30vw;
+    /* Define a largura em 40% da largura da viewport */
+    height: 35px;
+    /* Calcula a altura proporcionalmente à largura */
+    max-width: 40em;
+    /* Define a largura máxima em 40em */
+    max-height: 3em;
+    /* Define a altura máxima em 3em */
     min-width: 15em;
- }
+}
 
- input:focus{
+input:focus {
     border: none;
     outline: none;
     box-shadow: none;
- }
- 
- #lupa{
-    float:left;
-    margin:8px 0px 0px -30px;
-    cursor:pointer;
+}
+
+#lupa {
+    float: left;
+    margin: 8px 0px 0px -30px;
+    cursor: pointer;
     color: #061A40;
- }
- 
- #lupa:after{
-    font-family:FontAwesome;
-    font-size:14px;
-    content:"\f002";
- }
- 
- .submit-line{
+}
+
+#lupa:after {
+    font-family: FontAwesome;
+    font-size: 14px;
+    content: "\f002";
+}
+
+.submit-line {
     font-family: Kannit;
- }
- 
- .abs{
+}
+
+.abs {
     margin-bottom: 10px;
- }
- 
- .test{
-    margin: 0 25vw 0 25vw;
-    color: aliceblue;
+}
+
+.test {
+    margin: 0 20vw 0 20vw;
+    color: #061A40;
+    background-color: #f1f1f1;
+    border-radius: 25px 0px 0px 25px;
     font-family: Kannit;
     float: left;
     overflow: auto;
- }
+}
 
- h2{
+h2 {
     margin-bottom: 10px;
- }
- .url{
+}
+
+.url {
     margin-bottom: 5px;
- }
- /* Para navegadores WebKit (Chrome, Safari) */
+}
+
+/* Para navegadores WebKit (Chrome, Safari) */
 /* Estilo da barra de rolagem */
 ::-webkit-scrollbar {
-    width: 6px; /* largura da barra de rolagem */
-    height: 6px; /* altura da barra de rolagem */
+    width: 7px;
+    /* largura da barra de rolagem */
+    height: 5px;
+    /* altura da barra de rolagem */
+
 }
 
 /* Estilo do polegar da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-    background: #ccc; /* cor do polegar */
-    border-radius: 3px; /* borda do polegar */
+    background: #04183b;
+    /* cor do polegar */
+    border-radius: 3px;
+    /* borda do polegar */
 }
 
 /* Estilo do fundo da barra de rolagem (opcional) */
 ::-webkit-scrollbar-track {
-    background: transparent; /* cor de fundo da barra de rolagem */
+    background: transparent;
+    /* cor de fundo da barra de rolagem */
 }
+
 
 footer {
     background-color: #f1f1f1;
-    color:#04183b;
+    color: #04183b;
     text-align: center;
     padding: 20px;
     position: fixed;
@@ -159,12 +175,16 @@ footer {
     width: 100%;
 }
 
-.suggest{
-    color:rgb(231, 165, 84);
+.suggest {
+    color: rgb(231, 165, 84);
     font-style: italic;
     padding-bottom: 1em;
 }
 
-.result{
-    
+.result {
+    /* min-width: 15px; /* largura mínima */
+    /* min-height: 10px; altura mínima */
+    padding: 10px 15px 10px 15px;
+    display: none;
+    /* overflow-y: scroll;*/
 }

@@ -1,4 +1,4 @@
-const inputPesquisa = document.getElementById("input-pesquisa");
+var inputPesquisa = document.getElementById("input-pesquisa");
 const resultSearch = document.getElementById("result");
 
 inputPesquisa.addEventListener("keypress", function (event) {
@@ -26,6 +26,12 @@ function busca() {
         .then(function (jsonData) {
             const formattedData = formatJSON(jsonData);
             resultSearch.innerHTML = formattedData;
+            // Verifica se a div está vazia
+            if (resultSearch.innerHTML.trim() === "") {
+                resultSearch.style.display = "none"; // Se estiver vazia, oculta a div
+            } else {
+                resultSearch.style.display = "block"; // Se não estiver vazia, exibe a div
+            }
         })
         .catch(function (error) {
             console.error('Erro:', error);
@@ -45,4 +51,6 @@ function formatJSON(jsonData) {
                 `;
     }).join(''); // Precisa juntar todos os elementos do array em uma string
 }
+
+
 

@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'
         type='text/css'>
     <title>Search in InSearchOn Page</title>
-    
+
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <div class="pesquisa">
         <form id="form-pesquisa" action="localhost:8080/v1/search" method="GET">
             <div class="submit-line">
-                <input id="input-pesquisa" name="query" type="text" placeholder="Digite sua pesquisa"/>
+                <input id="input-pesquisa" name="query" type="text" placeholder="Digite sua pesquisa" />
                 <div id="lupa" onclick="busca()"></div>
             </div>
         </form>
@@ -29,6 +29,10 @@
     </div>
     <div class="test">
         <div class="result" id="result"></div>
+    </div>
+    <div id="botoes">
+        <button id="voltar">&lt</button>
+        <button id="avancar">&gt</button>
     </div>
     <footer>
         <h4>terminar de fazer o footer</h4>

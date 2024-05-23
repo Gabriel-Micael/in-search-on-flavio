@@ -22,10 +22,10 @@ h1 {
 }
 
 body {
-    background: rgb(6, 26, 64);
     background: linear-gradient(300deg, rgba(6, 26, 64, 1) 36%, rgba(0, 53, 89, 1) 73%);
-    height: 100vh;
+    /* background-repeat: no-repeat; */
     display: flex;
+    height: 100VH;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
@@ -93,6 +93,8 @@ input {
     max-height: 3em;
     /* Define a altura máxima em 3em */
     min-width: 15em;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+    ;
 }
 
 input:focus {
@@ -123,13 +125,14 @@ input:focus {
 }
 
 .test {
-    margin: 0 20vw 0 20vw;
+    margin: 0 20vw 6em 20vw;
     color: #061A40;
     background-color: #f1f1f1;
     border-radius: 25px 0px 0px 25px;
     font-family: Kannit;
     float: left;
     overflow: auto;
+    height: auto;
 }
 
 h2 {
@@ -182,9 +185,18 @@ footer {
 }
 
 .result {
-    /* min-width: 15px; /* largura mínima */
-    /* min-height: 10px; altura mínima */
-    padding: 10px 15px 10px 15px;
-    display: none;
-    /* overflow-y: scroll;*/
-}
+    padding: 10px 15px;
+    margin-bottom: 6em;
+    max-height: 60vh;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease; /* Adiciona uma transição suave para a altura e o padding */
+  }
+  
+  .result.empty {
+    padding: 0;
+    max-height: 0;
+  }
+  
+  
+
+.botoes {}

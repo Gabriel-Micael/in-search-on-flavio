@@ -128,7 +128,7 @@ input:focus {
     margin: 0 20vw 1em 20vw;
     color: #061A40;
     background-color: #f1f1f1;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 25px;
     font-family: Kannit;
     float: left;
     overflow: auto;
@@ -156,7 +156,7 @@ h2 {
 
 /* Estilo do polegar da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-    background: #04183b;
+    background: rgb(231, 165, 84);
     /* cor do polegar */
     border-radius: 3px;
     /* borda do polegar */
@@ -178,7 +178,7 @@ h2 {
 
   .result {
     padding: 10px 15px;
-    margin-bottom: 6em;
+    margin-bottom: 0;
     overflow: hidden;
     animation: fadeInOut 1s ease-out forwards;
   }

@@ -41,34 +41,24 @@ function busca() {
 
 // Função para formatar os dados JSON
 function formatJSON(jsonData) {
-    return jsonData.map(item => {
+    return jsonData.slice(0,10).map(item => {
         return `
-                    <div>
-                        <div style="max-width:250px;">
-                            <a href="${item.url}">
+                    <tr>
+                        <td style="max-width:700px;">
+                            <a class="clicked-link" href="${item.url}">
                                 <h2>${item.title}</h2>
-                                <p class="url" style="font-size: 12px;">${item.url}</p>
                             <a>
-                        </div>
-                        <br>
-                        <p class="abs" style="font-size: 16px;">${item.abs}</p>
-                    </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <a class="clicked-link" href="${item.url}">
+                             <p class="url" style="font-size: 12px;">${item.url}</p>
+                        <a>
+                    </tr>
+                           <p class="abs" style="font-size: 16px;">${item.abs}</p>
+                        </td>
+                    </tr>
                 `;
-        // `
-        // <table>
-        //     <tr>
-        //         <th> ${item.title} </th>
-        //     </tr>
-        //     <tr>
-        //         <td>
-        //             <a href="${item.url}" class="url" style="font-size: 12px;">${item.url}</a>
-        //         </td>
-        //     </tr>
-        //     <tr>
-        //         <p class="abs" style="font-size: 16px;">${item.abs}</p>
-        //     </tr>
-        // </table>
-        // `;
     }).join(''); // Precisa juntar todos os elementos do array em uma string
 }
 
@@ -78,18 +68,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para verificar se há conteúdo
     function checkContent() {
       if (result.innerHTML.trim() === '') {
-        result.classList.add('empty');
+        if (!result.classList.contains('empty')) {
+          result.classList.add('empty');
+          result.style.padding = '0';
+          result.style.maxHeight = '0';
+        }
       } else {
-        result.classList.remove('empty');
+        if (result.classList.contains('empty')) {
+          result.classList.remove('empty');
+          result.style.padding = '10px 15px 15px 15px';
+          result.style.maxHeight = 'none'; // ou qualquer outra altura desejada
+        }
       }
     }
   
     // Verificar conteúdo ao carregar a página
     checkContent();
   
-    // Verificar conteúdo sempre que for modificado
-    result.addEventListener('DOMSubtreeModified', checkContent);
+    // Observar mudanças no conteúdo da div
+    var observer = new MutationObserver(checkContent);
+    observer.observe(result, { childList: true, subtree: true });
   });
+  
+
+  
   
 
 

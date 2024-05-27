@@ -25,7 +25,7 @@ body {
     background: linear-gradient(300deg, rgba(6, 26, 64, 1) 36%, rgba(0, 53, 89, 1) 73%);
     /* background-repeat: no-repeat; */
     display: flex;
-    height: 100VH;
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
@@ -125,7 +125,7 @@ input:focus {
 }
 
 .test {
-    margin: 0 20vw 6em 20vw;
+    margin: 0 20vw 1em 20vw;
     color: #061A40;
     background-color: #f1f1f1;
     border-radius: 25px 0px 0px 25px;
@@ -141,6 +141,7 @@ h2 {
 
 .url {
     margin-bottom: 5px;
+    font-style: italic;
 }
 
 /* Para navegadores WebKit (Chrome, Safari) */
@@ -168,35 +169,50 @@ h2 {
 }
 
 
-footer {
-    background-color: #f1f1f1;
-    color: #04183b;
-    text-align: center;
-    padding: 20px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
 .suggest {
     color: rgb(231, 165, 84);
     font-style: italic;
     padding-bottom: 1em;
 }
 
-.result {
+
+  .result {
     padding: 10px 15px;
     margin-bottom: 6em;
-    max-height: 60vh;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease; /* Adiciona uma transição suave para a altura e o padding */
+    animation: fadeInOut 1s ease-out forwards;
   }
   
-  .result.empty {
+
+.clicked-link {
+    text-decoration: none;
+    color: rgb(204, 136, 53);
+}
+
+.result.empty {
     padding: 0;
     max-height: 0;
   }
-  
-  
 
 .botoes {}
+
+tbody.result {
+    max-height: 0vh; /* Altura máxima da tabela, ajuste conforme necessário */
+    overflow-y: auto; /* Adicione uma barra de rolagem vertical quando necessário */
+}
+
+tfoot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Garanta que os botões estejam alinhados corretamente */
+}
+
+footer {
+    background-color: #f1f1f1;
+    color: #04183b;
+    text-align: center;
+    padding: 20px;
+    width: 100%; /* Garanta que o rodapé ocupe toda a largura */
+    margin-top: auto; /* Empurre o rodapé para a parte inferior da página */
+}

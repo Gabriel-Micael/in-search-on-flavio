@@ -27,19 +27,19 @@
     <div id="suggest">
         <h3 class="suggest" id="suggest_data">aqui aparece sugestão de correção de pesquisa</h3>
     </div>
-    <table class="test" style="max-height: 45vh;">
+    <table class="test" id="test">
         <tbody class="result" id="result">
             
         </tbody>
         <tfoot>
             <tr id="botoes">
-                <td><button id="voltar" onclick="increment()">&lt</button></td>
-                <td><button id="avancar">&gt</button></td>
+                <td><button id="voltar" onclick="antPage()" disabled="true">&lt</button></td>
+                <td><button id="avancar" onclick="proxPage()">&gt</button></td>
             </tr>
         </tfoot>
     </table>
     <footer>
-        <h4>terminar de fazer o footer</h4>
+        <h4>Created by Gabs e Rogers</h4>
     </footer>
     <script src="../public/api.js"></script>
 </body>

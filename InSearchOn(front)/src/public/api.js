@@ -44,7 +44,7 @@ function busca() {
 
 // Função para formatar os dados JSON
 function formatJSON(jsonData) {
-    return jsonData.slice(from,from+tamPag).map(item => {
+    return jsonData.slice(from, from + tamPag).map(item => {
         return `
                     <tr>
                         <td style="max-width:700px;">
@@ -66,56 +66,58 @@ function formatJSON(jsonData) {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var test = document.getElementById('test');
     var result = document.getElementById('result');
     // Função para verificar se há conteúdo
     function checkContent() {
-      if (result.innerHTML.trim() === '') {
-          test.style.display = 'none';
-      } else {
-          test.style.display = 'block'; // ou qualquer outra altura desejada
-      }
+        if (result.innerHTML.trim() === '') {
+            test.style.display = 'none';
+        } else {
+            test.style.display = 'block'; // ou qualquer outra altura desejada
+        }
     }
-  
+
     // Verificar conteúdo ao carregar a página
     checkContent();
-  
+
     // Observar mudanças no conteúdo da div
     var observer = new MutationObserver(checkContent);
     observer.observe(result, { childList: true, subtree: true });
-  });
-  
-  function proxPage(){
-    var botaoProx = document.getElementById('avancar'); 
+});
 
-    if(from + tamPag < 60){
+var botaoAnt = document.getElementById('voltar');
+var botaoProx = document.getElementById('avancar');
+
+function proxPage() {
+    if (from + tamPag < 60) {
         from = from + tamPag;
-        if(from >= qtdResultados){
-            botaoProx.setAttribute('disabled',true);
-        }else{
-            botaoProx.setAttribute('disabled',false);
+        if (from >= 40) {
+            botaoProx.setAttribute('disabled', true);
             result.innerHTML = formatJSON(resultados);
-        } 
-    }
-    
-  }
-
-  function antPage(){
-    var botaoAnt = document.getElementById('voltar'); 
-
-    if(from - tamPag >= 0){
-        from = from - tamPag;
-        if(from = 0){
-            botaoAnt.setAttribute('disabled',true);
-        }else{
-            botaoAnt.setAttribute('disabled',false);
+        } else {
+            botaoProx.removeAttribute('disabled');
             result.innerHTML = formatJSON(resultados);
+            if (botaoAnt.getAttribute('disabled')){
+                botaoAnt.removeAttribute('disabled');
+            }
         }
     }
-  }
 
-  
-  
+}
 
-
+function antPage() {
+    if (from - tamPag >= 0) {
+        from = from - tamPag;
+        if (from <= 0) {
+            botaoAnt.setAttribute('disabled', true);
+            result.innerHTML = formatJSON(resultados);
+        } else {
+            botaoAnt.removeAttribute('disabled');
+            result.innerHTML = formatJSON(resultados);
+            if (botaoProx.getAttribute('disabled')){
+                botaoProx.removeAttribute('disabled');
+            }
+        }
+    }
+}

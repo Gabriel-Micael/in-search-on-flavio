@@ -17,15 +17,58 @@ paths:
           description: Query to be submitted
           schema:
             type: string
+#        - name: suggest
+#          in: query
+#          description: Suggest to input
+#          schema:
+#            type: string
+        - name: page
+          in: query
+          description: Page to be returned
+          schema:
+            type: integer
+        - name: pageSize
+          in: query
+          description: Number of page to be returned
+          schema:
+            type: integer
+        - name: filter
+          in: query
+          description: Filter of Order
+          schema:
+            type: integer
+        - name: order
+          in: query
+          description: Method of Order
+          schema:
+            type: boolean
+        - name: initialDate
+          in: query
+          description: Start Date Filter
+          schema:
+            type: string
+        - name: finalDate
+          in: query
+          description: End Date Filter
+          schema:
+            type: string
+        - name: minReadingTime
+          in: query
+          description: Min Reading Time
+          schema:
+            type: integer
+        - name: maxReadingTime
+          in: query
+          description: Max Reading Time
+          schema:
+            type: integer
       responses:
         200:
           description: OK
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Result'
+                $ref: '#/components/schemas/SearchResult'
         500:
           description: Unexpected error
           content:
@@ -34,6 +77,17 @@ paths:
                 $ref: '#/components/schemas/Error'
 components:
   schemas:
+    SearchResult:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Result'
+        total_results:
+          type: integer
+        search_time:
+          type: integer
     Result:
       type: object
       properties:
@@ -42,6 +96,10 @@ components:
         url:
           type: string
         abs:
+          type: string
+        reading_time:
+          type: integer
+        dt_creation:
           type: string
     Error:
       type: object

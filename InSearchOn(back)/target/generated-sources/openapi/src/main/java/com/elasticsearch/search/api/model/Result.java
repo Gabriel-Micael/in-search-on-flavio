@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 /**
  * Result
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-04-16T11:05:46.156344930-03:00[America/Sao_Paulo]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-06-29T20:49:01.654238048-03:00[America/Sao_Paulo]")
 
 public class Result  implements Serializable {
   private static final long serialVersionUID = 1L;
@@ -26,6 +26,12 @@ public class Result  implements Serializable {
 
   @JsonProperty("abs")
   private String abs;
+
+  @JsonProperty("reading_time")
+  private Integer readingTime;
+
+  @JsonProperty("dt_creation")
+  private String dtCreation;
 
   public Result title(String title) {
     this.title = title;
@@ -87,6 +93,46 @@ public class Result  implements Serializable {
     this.abs = abs;
   }
 
+  public Result readingTime(Integer readingTime) {
+    this.readingTime = readingTime;
+    return this;
+  }
+
+  /**
+   * Get readingTime
+   * @return readingTime
+  */
+  @ApiModelProperty(value = "")
+
+
+  public Integer getReadingTime() {
+    return readingTime;
+  }
+
+  public void setReadingTime(Integer readingTime) {
+    this.readingTime = readingTime;
+  }
+
+  public Result dtCreation(String dtCreation) {
+    this.dtCreation = dtCreation;
+    return this;
+  }
+
+  /**
+   * Get dtCreation
+   * @return dtCreation
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getDtCreation() {
+    return dtCreation;
+  }
+
+  public void setDtCreation(String dtCreation) {
+    this.dtCreation = dtCreation;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -99,12 +145,14 @@ public class Result  implements Serializable {
     Result result = (Result) o;
     return Objects.equals(this.title, result.title) &&
         Objects.equals(this.url, result.url) &&
-        Objects.equals(this.abs, result.abs);
+        Objects.equals(this.abs, result.abs) &&
+        Objects.equals(this.readingTime, result.readingTime) &&
+        Objects.equals(this.dtCreation, result.dtCreation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, url, abs);
+    return Objects.hash(title, url, abs, readingTime, dtCreation);
   }
 
   @Override
@@ -115,6 +163,8 @@ public class Result  implements Serializable {
     sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    abs: ").append(toIndentedString(abs)).append("\n");
+    sb.append("    readingTime: ").append(toIndentedString(readingTime)).append("\n");
+    sb.append("    dtCreation: ").append(toIndentedString(dtCreation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

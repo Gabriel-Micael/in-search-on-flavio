@@ -25,18 +25,18 @@ Depois de ter instalado o ElasticSearch ( https://www.elastic.co/downloads/past-
 Depois vá até a pasta "Wikipédia" e execute o comando:
 
 **WINDOWS**
-# Codificar o usuário e a senha em Base64
+* Codificar o usuário e a senha em Base64
 $username = "elastic"
 $password = "user123"
 $encodedAuth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("${username}:${password}"))
 
-# Definir os cabeçalhos com a autenticação básica
+* Definir os cabeçalhos com a autenticação básica
 $headers = @{
     "Content-Type" = "application/x-ndjson"
     "Authorization" = "Basic $encodedAuth"
 }
 
-# Executar a requisição
+* Executar a requisição
 Invoke-WebRequest -Uri "https://localhost:9200/wikipedia/_bulk" `
                   -Method Post `
                   -Headers $headers `

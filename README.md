@@ -51,4 +51,4 @@ curl -H "Content-Type: application/x-ndjson" -XPOST https://localhost:9200/wikip
 Em seguida execute o arquivo "SearchApplication.java" no diretório "...\in-search-on-flavio-main\in-search-on-flavio-main\InSearchOn(back)\src\main\java\com\elasticsearch\search"
 e depois execute o comando "npm start" no diretório "...\in-search-on-flavio-main\in-search-on-flavio-main\InSearchOn(front)\src"
 
-*Para acessar a página de busca, vá até o navegador e digite "localhost:1234"*
+*Para acessar a página de busca, vá até o navegador e digite "localhost:1234" na URL*
